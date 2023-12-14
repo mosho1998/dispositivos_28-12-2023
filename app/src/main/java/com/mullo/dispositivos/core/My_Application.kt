@@ -10,8 +10,8 @@ class My_Application : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        con = DBConnection().getConnection(applicationContext)
-        LoginUserCase(con).insertUsers()
+       // con = DBConnection().getConnection(applicationContext)
+       // LoginUserCase(con).insertUsers()
     }
 
 
