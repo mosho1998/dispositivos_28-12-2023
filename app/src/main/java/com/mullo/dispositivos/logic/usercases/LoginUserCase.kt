@@ -12,7 +12,7 @@ import com.mullo.dispositivos.ui.core.Constants
 class LoginUserCase(val connection: DBRepository) {
 
 
-    fun checkLogin(username: String, password: String): Int {
+     fun checkLogin(username: String, password: String): Int {
         var ret = -1
 
         val users = UserRepository().getUserList()
@@ -26,23 +26,21 @@ class LoginUserCase(val connection: DBRepository) {
         // return  users.contains(Users(username, password))
     }
 
-    fun getUserName1(userId: Int): Users =
+    suspend fun getUserName1(userId: Int): Users =
         connection.getUsersDAO().getOneUser(userId)
 
 
-    fun getUserName(userId: Int): Users =
-
-        UserRepository().getUserList().first {
-            it.userId == userId
-        }
-
-    fun insertUsers() =
-        if (connection.getUsersDAO().getAllUsers().isNotEmpty()) {
+    suspend fun insertUsers() =
+        if (connection.getUsersDAO().getAllUsers().isEmpty()) {
             connection.getUsersDAO().insertUser(
                 UserRepository().getUserList()
             )
         } else {
-
+            null
         }
+
+    suspend fun getAllUsers(): List<Users> =
+         connection.getUsersDAO().getAllUsers()
+
 
 }

@@ -63,4 +63,14 @@ dependencies {
     annotationProcessor("androidx.room:room-compiler:2.5.0")
 
     ksp("androidx.room:room-compiler:2.5.0")
+
+    //Corutinas
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+    implementation("androidx.room:room-ktx:2.3.0")
+
+    //Image load implementation
+    implementation("io.coil-kt:coil:2.5.0")
+    implementation("com.airbnb.android:lottie:6.2.0")
+
 }

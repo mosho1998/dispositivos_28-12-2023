@@ -10,14 +10,14 @@ import com.mullo.dispositivos.data.entities.Users
 interface UsersDAO {
 
     @Query("SELECT *FROM Users")
-    fun getAllUsers() : List<Users>
+    suspend fun getAllUsers() : List<Users>
 
     @Query("SELECT *FROM Users where userId = :userId")
-    fun getOneUser(userId : Int) : Users
+    suspend fun getOneUser(userId : Int) : Users
 
     @Insert
-    fun insertUser(users: List<Users>)
+    suspend fun insertUser(users: List<Users>)
 
     @Update
-    fun updateUsers(users: List<Users>)
+    suspend fun updateUsers(users: List<Users>)
 }
