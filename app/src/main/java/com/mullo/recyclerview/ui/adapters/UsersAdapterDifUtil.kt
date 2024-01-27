@@ -1,5 +1,6 @@
 package com.mullo.recyclerview.ui.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,26 +9,26 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.mullo.recyclerview.R
-import com.mullo.recyclerview.data.entities.Users
 import com.mullo.recyclerview.databinding.ItemsUsersBinding
+import com.mullo.recyclerview.logic.entities.FullInfoAnimeLG
 
 class UsersAdapterDifUtil(
     private val onDeleteItem: (Int) -> Unit,
-    private val onSelectItem: (Users) -> Unit
+    private val onSelectItem: (FullInfoAnimeLG) -> Unit
 
-) : ListAdapter<Users, UsersAdapterDifUtil.UsersVH>(DiffUtilUserCallback) {
+) : ListAdapter<FullInfoAnimeLG, UsersAdapterDifUtil.UsersVH>(DiffUtilUserCallback) {
 
     class UsersVH(view: View) : RecyclerView.ViewHolder(view) {
 
         private var binding: ItemsUsersBinding = ItemsUsersBinding.bind(view)
         fun render(
-            item: Users,
+            item: FullInfoAnimeLG,
             onDeleteItem: (Int) -> Unit,
-            onSelectItem: (Users) -> Unit
+            onSelectItem: (FullInfoAnimeLG) -> Unit
         ) {
             binding.txtUserName.text = item.name
-            binding.txtUserDesc.text = item.desc
-            binding.imgUser.load(item.img)
+            binding.txtUserDesc.text = item.synapsis
+            binding.imgUser.load(item.big_image)
 
             binding.btnBorrar.setOnClickListener {
                 onDeleteItem(adapterPosition)
@@ -50,12 +51,13 @@ class UsersAdapterDifUtil(
 
 }
 
-private object DiffUtilUserCallback : DiffUtil.ItemCallback<Users>() {
-    override fun areItemsTheSame(oldItem: Users, newItem: Users): Boolean {
+private object DiffUtilUserCallback : DiffUtil.ItemCallback<FullInfoAnimeLG>() {
+    override fun areItemsTheSame(oldItem: FullInfoAnimeLG, newItem: FullInfoAnimeLG): Boolean {
         return (oldItem.id == newItem.id)
     }
 
-    override fun areContentsTheSame(oldItem: Users, newItem: Users): Boolean {
+    @SuppressLint("DiffUtilEquals")
+    override fun areContentsTheSame(oldItem: FullInfoAnimeLG, newItem: FullInfoAnimeLG): Boolean {
         return (oldItem == newItem)
     }
 
