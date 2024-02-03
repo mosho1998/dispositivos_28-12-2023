@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "938970099866",
+    "project_id": "fir-app-61790",
+    "storage_bucket": "fir-app-61790.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938970099866:android:9c21e00f6dfe1419206f23",
+        "android_client_info": {
+          "package_name": "com.mullo.biometricapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNeUh93MGv3bOBCB7VnA9TOLLW4suj9G0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938970099866:android:8654008ca93a7fe0206f23",
+        "android_client_info": {
+          "package_name": "com.mullo.recyclerview"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNeUh93MGv3bOBCB7VnA9TOLLW4suj9G0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
